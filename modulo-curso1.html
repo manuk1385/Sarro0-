@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulos del Curso</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+font-family:'Inter',sans-serif;
+background:#f5f7fb;
+margin:0;
+padding:40px;
+color:#111;
+}
+
+/* CONTENEDOR */
+.container{
+max-width:1000px;
+margin:auto;
+}
+
+/* TITULO */
+
+h1{
+font-size:32px;
+margin-bottom:30px;
+}
+
+/* MODULOS */
+
+.modulo{
+background:white;
+padding:20px;
+border-radius:14px;
+margin-bottom:15px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+transition:0.3s;
+cursor:pointer;
+}
+
+.modulo:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* TEXTO */
+
+.modulo-info{
+display:flex;
+flex-direction:column;
+}
+
+.modulo-titulo{
+font-size:18px;
+font-weight:700;
+}
+
+.modulo-desc{
+font-size:14px;
+color:#666;
+}
+
+/* CIRCULO ESTADO */
+
+.estado{
+width:24px;
+height:24px;
+border-radius:50%;
+border:3px solid #ccc;
+transition:0.3s;
+}
+
+.estado.completado{
+background:#00c853;
+border-color:#00c853;
+}
+
+/* CONTENIDO */
+
+.contenido{
+display:none;
+background:white;
+margin-top:10px;
+padding:25px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+/* BOTONES */
+
+.btn{
+background:#3483fa;
+color:white;
+border:none;
+padding:10px 18px;
+border-radius:8px;
+cursor:pointer;
+font-weight:600;
+margin-top:15px;
+}
+
+.btn:hover{
+background:#2968c8;
+}
+
+/* VOLVER */
+
+.volver{
+margin-bottom:30px;
+display:inline-block;
+text-decoration:none;
+color:#3483fa;
+font-weight:600;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<a href="index.html" class="volver">⬅ Volver a la página principal</a>
+
+<h1>Curso Nivel 1</h1>
+
+<!-- MODULO 1 -->
+
+<div class="modulo" onclick="abrirModulo(1)">
+<div class="modulo-info">
+<div class="modulo-titulo">Módulo 1</div>
+<div class="modulo-desc">Título del módulo</div>
+</div>
+
+<div class="estado" id="estado1"></div>
+</div>
+
+<div class="contenido" id="contenido1">
+
+<!-- ESCRIBÍ TU CONTENIDO AQUÍ -->
+
+<p>
+Contenido del módulo.
+Podés agregar texto, imágenes, videos, etc.
+</p>
+
+<button class="btn" onclick="completarModulo(1)">
+Marcar como completado
+</button>
+
+</div>
+
+
+<!-- MODULO 2 -->
+
+<div class="modulo" onclick="abrirModulo(2)">
+<div class="modulo-info">
+<div class="modulo-titulo">Módulo 2</div>
+<div class="modulo-desc">Título del módulo</div>
+</div>
+
+<div class="estado" id="estado2"></div>
+</div>
+
+<div class="contenido" id="contenido2">
+
+<p>
+Contenido del módulo.
+</p>
+
+<button class="btn" onclick="completarModulo(2)">
+Marcar como completado
+</button>
+
+</div>
+
+
+<!-- MODULO 3 -->
+
+<div class="modulo" onclick="abrirModulo(3)">
+<div class="modulo-info">
+<div class="modulo-titulo">Módulo 3</div>
+<div class="modulo-desc">Título del módulo</div>
+</div>
+
+<div class="estado" id="estado3"></div>
+</div>
+
+<div class="contenido" id="contenido3">
+
+<p>
+Contenido del módulo.
+</p>
+
+<button class="btn" onclick="completarModulo(3)">
+Marcar como completado
+</button>
+
+</div>
+
+
+</div>
+
+
+<script>
+
+/* ABRIR MODULOS */
+
+function abrirModulo(num){
+
+let contenido = document.getElementById("contenido"+num);
+
+if(contenido.style.display==="block"){
+contenido.style.display="none";
+}else{
+contenido.style.display="block";
+}
+
+}
+
+/* COMPLETAR MODULO */
+
+function completarModulo(num){
+
+localStorage.setItem("modulo"+num,"completo");
+
+document.getElementById("estado"+num)
+.classList.add("completado");
+
+}
+
+/* CARGAR PROGRESO */
+
+for(let i=1;i<=10;i++){
+
+if(localStorage.getItem("modulo"+i)==="completo"){
+
+let estado=document.getElementById("estado"+i);
+
+if(estado){
+estado.classList.add("completado");
+}
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

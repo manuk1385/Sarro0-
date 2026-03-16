@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Panel del Curso</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+display:flex;
+height:100vh;
+background:#f5f7fb;
+}
+
+/* MENU LATERAL */
+
+.sidebar{
+width:260px;
+background:#0f172a;
+color:white;
+padding:20px;
+}
+
+.logo{
+width:120px;
+margin-bottom:20px;
+}
+
+.sidebar h2{
+margin-bottom:30px;
+}
+
+.modulo{
+padding:12px;
+background:#1e293b;
+margin-bottom:10px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.modulo:hover{
+background:#334155;
+}
+
+.lock{
+opacity:0.4;
+cursor:not-allowed;
+}
+
+/* CONTENIDO */
+
+.main{
+flex:1;
+padding:40px;
+overflow-y:auto;
+}
+
+.titulo-curso{
+font-size:28px;
+margin-bottom:10px;
+}
+
+.progreso{
+height:20px;
+background:#ddd;
+border-radius:10px;
+overflow:hidden;
+margin-bottom:30px;
+}
+
+.barra{
+height:100%;
+width:0%;
+background:#22c55e;
+}
+
+.video{
+background:black;
+height:350px;
+margin-bottom:20px;
+border-radius:10px;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+}
+
+/* LECTURA */
+
+.lectura{
+margin-top:40px;
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+.lectura h3{
+margin-top:0;
+}
+
+.material{
+margin-top:10px;
+padding:10px;
+background:#eef2ff;
+border-radius:6px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.material a{
+text-decoration:none;
+color:white;
+background:#2563eb;
+padding:6px 12px;
+border-radius:5px;
+}
+
+/* BOTON */
+
+button{
+padding:10px 20px;
+border:none;
+background:#2563eb;
+color:white;
+border-radius:6px;
+cursor:pointer;
+margin-top:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<img src="saul.png" class="logo">
+
+<h2>Módulos</h2>
+
+<div class="modulo" onclick="mod1()">
+Módulo 1
+</div>
+
+<div id="m2" class="modulo lock">
+Módulo 2 🔒
+</div>
+
+<div id="m3" class="modulo lock">
+Módulo 3 🔒
+</div>
+
+</div>
+
+<div class="main">
+
+<h1 class="titulo-curso">
+Curso de Calefones Ionizados Aspe
+</h1>
+
+<div class="progreso">
+<div class="barra" id="barra"></div>
+</div>
+
+<div class="video" id="video">
+Contenido del módulo
+</div>
+
+<h2 id="titulo">
+Selecciona un módulo
+</h2>
+
+<p id="texto">
+Aquí aparecerá el contenido del curso.
+</p>
+
+<button onclick="certificado()">
+Obtener Certificado
+</button>
+
+<!-- SECCION LECTURA -->
+
+<div class="lectura">
+
+<h3>📚 Material de Lectura</h3>
+
+<p>
+Aquí puedes descargar material complementario del curso.
+</p>
+
+<div class="material">
+Guía de Reparación 1
+<a href="pdf/reparacion1.pdf" target="_blank">PDF</a>
+</div>
+
+<div class="material">
+Ejercicios de práctica
+<a href="pdf/ejercicios.pdf" target="_blank">PDF</a>
+</div>
+
+<div class="material">
+Guía de Reparación 2
+<a href="pdf/reparacion2.pdf" target="_blank">PDF</a>
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+let progreso = localStorage.getItem("progreso") || 0;
+
+document.getElementById("barra").style.width = progreso + "%";
+
+/* MODULO 1 */
+
+function mod1(){
+
+document.getElementById("titulo").innerText="Módulo 1";
+document.getElementById("texto").innerText="Introducción a los calefones ionizados.";
+document.getElementById("video").innerText="VIDEO MODULO 1";
+
+localStorage.setItem("progreso",33);
+document.getElementById("barra").style.width="33%";
+
+document.getElementById("m2").classList.remove("lock");
+document.getElementById("m2").onclick = mod2;
+
+}
+
+/* MODULO 2 */
+
+function mod2(){
+
+document.getElementById("titulo").innerText="Módulo 2";
+document.getElementById("texto").innerText="Acordes y ritmo.";
+document.getElementById("video").innerText="VIDEO MODULO 2";
+
+localStorage.setItem("progreso",66);
+document.getElementById("barra").style.width="66%";
+
+document.getElementById("m3").classList.remove("lock");
+document.getElementById("m3").onclick = mod3;
+
+}
+
+/* MODULO 3 */
+
+function mod3(){
+
+document.getElementById("titulo").innerText="Módulo 3";
+document.getElementById("texto").innerText="Tocar tu primera canción.";
+document.getElementById("video").innerText="VIDEO MODULO 3";
+
+localStorage.setItem("progreso",100);
+document.getElementById("barra").style.width="100%";
+
+}
+
+/* CERTIFICADO */
+
+function certificado(){
+
+let progreso = localStorage.getItem("progreso");
+
+if(progreso < 100){
+
+alert("Debes completar el curso");
+
+return;
+
+}
+
+window.location.href="certificado.html";
+
+}
+
+localStorage.setItem("nombreAlumno","Emanuel Kees");
+localStorage.setItem("cursoNombre","Curso de Calefones Ionizados Aspe Nivel 1");
+
+</script>
+
+</body>
+</html>
