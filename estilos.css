@@ -162,7 +162,7 @@ color:white;
 .catalogos-grid{
 display:grid;
 grid-template-columns:repeat(3, 1fr);
-gap:160px 40px; 
+gap:40px; 
 max-width:1100px;
 margin:auto;
 }
@@ -501,4 +501,104 @@ margin-top:10px;
 .btn-whatsapp img{
 width:18px;
 height:18px;
+}
+
+/* ========================= */
+/* RESPONSIVE CELULAR */
+/* ========================= */
+
+@media (max-width: 768px){
+
+/* HEADER */
+.header-ml{
+flex-direction:column;
+align-items:stretch;
+padding:10px 15px;
+gap:10px;
+}
+
+.brand{
+justify-content:center;
+}
+
+.search-box{
+width:100%;
+max-width:100%;
+}
+
+/* PRESENTACION */
+.presentacion{
+padding:40px 15px;
+}
+
+.card-presentacion{
+padding:30px 20px;
+}
+
+/* CATALOGOS */
+.catalogos-grid{
+grid-template-columns:1fr;
+gap:20px;
+}
+
+.catalogo-card{
+padding:20px;
+}
+
+/* EJEMPLOS */
+
+.ejemplos-grid{
+grid-template-columns:1fr;
+gap:40px;
+}
+
+.slide img,
+.slide video{
+max-height:300px;
+}
+
+/* SECCIONES */
+
+.seccion{
+padding:50px 20px;
+}
+
+.grid{
+grid-template-columns:1fr;
+padding:10px;
+}
+
+/* FOOTER */
+
+.footer-contenedor{
+flex-direction:column;
+gap:30px;
+}
+
+.formulario-box,
+.contactos-box{
+min-width:100%;
+}
+
+}
+
+/* ========================= */
+/* TABLET */
+/* ========================= */
+
+@media (min-width:769px) and (max-width:1024px){
+
+.catalogos-grid{
+grid-template-columns:repeat(2,1fr);
+gap:30px;
+}
+
+.ejemplos-grid{
+grid-template-columns:1fr;
+}
+
+.grid{
+grid-template-columns:repeat(2,1fr);
+}
+
 }
