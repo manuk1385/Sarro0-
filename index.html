@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="icon" href="saul.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arcucci Saul Pascual Ernesto</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+<header class="header-ml">
+
+<div class="brand">
+<img src="saul.png">
+<div class="logo">Sarro0%</div>
+</div>
+
+<div class="search-box" style="position:relative">
+
+<input id="buscador" type="text" placeholder="Buscar productos, cursos o servicios">
+
+<button onclick="buscarProducto()">🔍</button>
+
+<div id="sugerencias"></div>
+
+</div>
+
+</header>
+
+<section class="presentacion">
+<div class="card-presentacion">
+
+<img src="foto cara.jpg">
+
+<h1>Arcucci Saul</h1>
+
+<p class="descripcion-central">
+Especialista en soluciones profesionales de Sarro.
+</p>
+
+<div class="contacto-hover" onclick="toggleContacto(event)">
+Contactos
+
+<div class="contacto-menu" id="contactoMenu">
+<a href="https://wa.me/5492926404627" target="_blank">WhatsApp</a>
+<a href="https://www.instagram.com/sauloarcucci/" target="_blank">Instagram</a>
+<a href="https://www.facebook.com/saul.arcucci" target="_blank">Facebook</a>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="catalogos-home">
+
+<h2>Catálogos</h2>
+
+<div class="catalogos-grid">
+
+<div class="catalogo-card" onclick="location.href='#franquicia'">
+<div class="catalogo-titulo">Franquicia Sarro 0%</div>
+<div class="subcatalogo">
+<a href="#franquicia1">Franquicia Básica</a>
+<a href="#franquicia1">Franquicia Profesional</a>
+<a href="#franquicia1">Franquicia Premium</a>
+</div>
+</div>
+
+<div class="catalogo-card" onclick="location.href='#cursos'">
+<div class="catalogo-titulo">Curso Calefones Ionizados</div>
+
+<div class="subcatalogo">
+<a href="#cursos">Curso Nivel 1</a>
+<a href="#cursos">Curso Nivel 2</a>
+<a href="#cursos">Curso Nivel 3</a>
+</div>
+</div>
+
+<div class="catalogo-card" onclick="location.href='#deteccion'">
+<div class="catalogo-titulo">Detección de Fugas</div>
+
+<div class="subcatalogo">
+<a href="#deteccion">Detección Hogar</a>
+<a href="#deteccion">Detección Profesional</a>
+<a href="#deteccion">Informe Termográfico</a>
+</div>
+</div>
+
+<div class="catalogo-card" onclick="location.href='#pastillas'">
+<div class="catalogo-titulo">Pastillas</div>
+
+<div class="subcatalogo">
+<a href="#pastillas">Pastilla ASPE</a>
+</div>
+</div>
+
+<div class="catalogo-card" onclick="location.href='#membresia'">
+<div class="catalogo-titulo">Membresía</div>
+
+<div class="subcatalogo">
+<a href="#membresia">Membresía Profesional</a>
+</div>
+</div>
+
+<div class="catalogo-card" onclick="location.href='#alquiler'">
+<div class="catalogo-titulo">Alquiler Temporario</div>
+
+<div class="subcatalogo">
+<a href="#alquiler">Quincho Temporario</a>
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- EJEMPLOS -->
+<section class="ejemplos-section">
+
+<h2 class="titulo-principal">Ejemplos</h2>
+
+<div class="ejemplos-grid">
+
+<!-- SARRO -->
+<div class="ejemplo-columna">
+
+<h3>Sarro 0%</h3>
+
+<div class="carousel-box">
+
+<button class="carousel-btn prev" onclick="mover1(-1)">❮</button>
+
+<div class="carousel-container">
+
+<div class="carousel" id="carousel1">
+
+<div class="slide">
+<img src="pastillas.jpeg">
+</div>
+
+
+<div class="slide">
+<video src="videolavarropa.mp4" muted controls></video>
+</div>
+
+
+<div class="slide">
+<img src="Curso.jpeg">
+</div>
+
+<div class="slide">
+<img src="franquicia1.jpeg">
+</div>
+
+<div class="slide">
+<img src="franquicia2.jpeg">
+</div>
+
+<div class="slide">
+<img src="franquicia4.jpeg">
+</div>
+
+<div class="slide">
+<img src="franquicia5.jpeg">
+</div>
+
+</div>
+</div>
+
+<button class="carousel-btn next" onclick="mover1(1)">❯</button>
+
+</div>
+</div>
+
+
+<!-- QUINCHO -->
+<div class="ejemplo-columna">
+
+<h3>Quincho (Alquiler Temporario)</h3>
+
+<div class="carousel-box">
+
+<button class="carousel-btn prev" onclick="mover2(-1)">❮</button>
+
+<div class="carousel-container">
+
+<div class="carousel" id="carousel2">
+
+<div class="slide">
+<img src="quincho.png">
+</div>
+
+<div class="slide">
+<video src="quinchovideo.cur.mp4" muted controls></video>
+</div>
+
+<div class="slide">
+<video src="quinchocamas.mp4" muted controls></video>
+</div>
+
+</div>
+</div>
+
+<button class="carousel-btn next" onclick="mover2(1)">❯</button>
+
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!--productos-->
+<section id="franquicia" class="seccion">
+
+<h2>Franquicia Sarro 0%</h2>
+<p class="descripcion-seccion">
+Conocé nuestras opciones de franquicia para ofrecer el sistema Sarro 0% y comenzar tu propio servicio profesional.
+</p>
+
+<div class="grid">
+
+<div class="card producto" data-nombre="franquicia basica" onclick="location.href='franquicia.html'">
+<img src="franquicia1.jpeg">
+<h3>Franquicia Hogares</h3>
+<a class="btn-whatsapp" 
+href="https://wa.me/5492926404627" 
+target="_blank"
+onclick="event.stopPropagation()">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+WhatsApp
+</a>
+</div>
+
+<div class="card producto" data-nombre="franquicia profesional" onclick="location.href='franquicia2.html'">
+<img src="franquicia2.jpeg">
+<h3>Franquicia Comercios y Edificios</h3>
+<a class="btn-whatsapp" 
+href="https://wa.me/5492926404627" 
+target="_blank"
+onclick="event.stopPropagation()">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+WhatsApp
+</a>
+</div>
+
+<div class="card producto" data-nombre="franquicia premium" onclick="location.href='franquicia3.html'">
+<img src="franquicia4.jpeg">
+<h3>Franquicia Industrial</h3>
+<a class="btn-whatsapp" 
+href="https://wa.me/5492926404627" 
+target="_blank"
+onclick="event.stopPropagation()">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+WhatsApp
+</a>
+</div>
+
+</div>
+</section>
+
+<section id="deteccion" class="seccion">
+
+<h2>Detección de Fugas</h2>
+<p class="descripcion-seccion">
+Servicio especializado para localizar fugas de agua ocultas en cañerías, pisos o paredes utilizando técnicas y equipos profesionales que permiten detectar el problema sin romper innecesariamente.
+</p>
+<div class="grid">
+
+<div class="card producto" data-nombre="deteccion hogar" onclick="location.href='deteccion1.html'">
+<img src="deteccion1.jpg">
+<h3>Detección Hogar</h3>
+<a class="btn-whatsapp" 
+href="https://wa.me/5492926404627" 
+target="_blank"
+onclick="event.stopPropagation()">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+WhatsApp
+</a>
+</div>
+
+<div class="card producto" data-nombre="deteccion profesional" onclick="location.href='deteccion2.html'">
+<img src="deteccion2.jpg">
+<h3>Detección Profesional</h3>
+<a class="btn-whatsapp" 
+href="https://wa.me/5492926404627" 
+target="_blank"
+onclick="event.stopPropagation()">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+WhatsApp
+</a>
+</div>
+
+<div class="card producto" data-nombre="informe termografico" onclick="location.href='deteccion3.html'">
+<img src="deteccion3.jpg">
+<h3>Informe Termográfico</h3>
+<a class="btn-whatsapp" 
+href="https://wa.me/5492926404627" 
+target="_blank"
+onclick="event.stopPropagation()">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+WhatsApp
+</a>
+</div>
+
+</div>
+</section>
+
+<section id="cursos" class="seccion">
+
+<h2>Curso Calefones Ionizados</h2>
+<p class="descripcion-seccion">
+Capacitación completa para aprender a trabajar con calefones ionizados y sistema Sarro 0%. Desde nivel básico hasta avanzado, para salir preparado para ofrecer el servicio profesional.
+</p>
+<div class="grid">
+
+<div class="card producto" data-nombre="curso nivel 1" onclick="location.href='curso1.html'">
+<img src="curso1.jpg">
+<h3>Curso Nivel 1</h3>
+<a class="btn-whatsapp" 
+href="https://wa.me/5492926404627" 
+target="_blank"
+onclick="event.stopPropagation()">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+WhatsApp
+</a>
+</div>
+
+<div class="card producto" data-nombre="curso nivel 2" onclick="location.href='curso2.html'">
+<img src="curso2.jpg">
+<h3>Curso Nivel 2</h3>
+<a class="btn-whatsapp" 
+href="https://wa.me/5492926404627" 
+target="_blank"
+onclick="event.stopPropagation()">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+WhatsApp
+</a>
+</div>
+
+<div class="card producto" data-nombre="curso nivel 3" onclick="location.href='curso3.html'">
+<img src="curso3.jpg">
+<h3>Curso Nivel 3</h3>
+<a class="btn-whatsapp" 
+href="https://wa.me/5492926404627" 
+target="_blank"
+onclick="event.stopPropagation()">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+WhatsApp
+</a>
+</div>
+
+</div>
+</section>
+
+<section id="pastillas" class="seccion">
+
+<h2>Pastillas Aspe</h2>
+<p class="descripcion-seccion">
+Pastillas de alta calidad para eliminar el sarro de lavarropa.
+</p>
+<div class="grid">
+
+<div class="card producto" data-nombre="pastilla aspe" onclick="location.href='pastilla1.html'">
+<img src="pastillas.jpeg">
+<h3>Pastilla ASPE</h3>
+<a class="btn-whatsapp" 
+href="https://wa.me/5492926404627" 
+target="_blank"
+onclick="event.stopPropagation()">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+WhatsApp
+</a>
+</div>
+
+</div>
+</section>
+
+
+<section id="alquiler" class="seccion">
+
+<h2>Alquiler Temporario</h2>
+<p class="descripcion-seccion">
+Lugar para alquilar por dia, disponible para dormir, uso de pileta, fogon, parrilla, baños y mas. Ideal para reuniones o simplemente disfrutar de un día al aire libre.
+</p>
+<div class="grid">
+
+<div class="card producto" data-nombre="quincho alquiler" onclick="location.href='quincho.html'">
+<img src="quincho.png">
+<h3>Quincho</h3>
+<a class="btn-whatsapp" 
+href="https://wa.me/5492926404627" 
+target="_blank"
+onclick="event.stopPropagation()">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+WhatsApp
+</a>
+
+</div>
+</section>
+
+<section id="membresia" class="seccion">
+
+<h2>Membresía Profesional</h2>
+  <p class="descripcion-seccion">
+Asesoramiento Profesional
+
+Debido a la gran cantidad de consultas que recibo diariamente por teléfono y mensajes, a partir de ahora el asesoramiento técnico personalizado tendrá un valor.
+
+Mi experiencia y conocimientos están disponibles para ayudarte a resolver problemas, realizar diagnósticos, orientar trabajos o mejorar tu servicio. Cada consulta implica tiempo, análisis y dedicación profesional.
+
+Las personas que cuentan con Membresía Profesional tienen prioridad de atención y acceso a asesoramiento directo dentro de los beneficios incluidos en su membresía.
+
+Si no sos miembro, igualmente podés solicitar un asesoramiento puntual por teléfono o videollamada, coordinando previamente el servicio.
+
+De esta forma puedo garantizar una atención más organizada, dedicada y de mayor calidad para quienes realmente necesitan el acompañamiento profesional.
+  </p>
+<div class="grid">
+
+<div class="card producto" data-nombre="membresia profesional">
+<img src="membresia.png">
+<h3>Membresía</h3>
+<a class="btn-whatsapp" 
+href="https://wa.me/5492926404627" 
+target="_blank"
+onclick="event.stopPropagation()">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+WhatsApp
+</a>
+</div>
+</section>
+
+<script>
+
+const buscador = document.getElementById("buscador");
+const sugerencias = document.getElementById("sugerencias");
+
+buscador.addEventListener("input", function(){
+
+let texto = buscador.value.toLowerCase();
+let productos = document.querySelectorAll(".producto");
+
+sugerencias.innerHTML = "";
+
+if(texto.length === 0){
+sugerencias.style.display = "none";
+return;
+}
+
+productos.forEach(prod=>{
+
+let nombre = prod.dataset.nombre.toLowerCase();
+
+if(nombre.includes(texto)){
+
+let div = document.createElement("div");
+div.textContent = nombre;
+
+div.onclick = function(){
+
+buscador.value = nombre;
+sugerencias.style.display = "none";
+
+prod.scrollIntoView({
+behavior:"smooth",
+block:"center"
+});
+
+};
+
+sugerencias.appendChild(div);
+
+}
+
+});
+
+if(sugerencias.innerHTML !== ""){
+sugerencias.style.display = "block";
+}else{
+sugerencias.style.display = "none";
+}
+
+});
+
+document.addEventListener("click", function(e){
+if(!document.querySelector(".search-box").contains(e.target)){
+sugerencias.style.display="none";
+}
+});
+
+
+const contactoMenu=document.getElementById("contactoMenu");
+
+function toggleContacto(e){
+e.stopPropagation();
+contactoMenu.classList.toggle("active");
+}
+
+document.addEventListener("click",function(e){
+if(!contactoMenu.contains(e.target)){
+contactoMenu.classList.remove("active");
+}
+});
+
+function buscarProducto(){
+
+let texto=document.getElementById("buscador").value.toLowerCase();
+
+let productos=document.querySelectorAll(".producto");
+
+let encontrado=false;
+
+productos.forEach(prod=>{
+
+let nombre=prod.dataset.nombre.toLowerCase();
+
+if(nombre.includes(texto)){
+
+prod.scrollIntoView({
+behavior:"smooth",
+block:"center"
+});
+
+prod.style.boxShadow="0 0 25px #3483fa";
+
+setTimeout(()=>{
+prod.style.boxShadow="";
+},2000);
+
+encontrado=true;
+
+}
+
+});
+
+if(!encontrado){
+alert("No se encontró el producto");
+}
+
+}
+
+let index1 = 0;
+let index2 = 0;
+function silenciarVideos(){
+
+const videos = document.querySelectorAll("video");
+
+videos.forEach(video=>{
+video.pause();
+video.currentTime = 0;
+video.muted = true;
+});
+
+}
+
+/* CARRUSEL 1 */
+function mover1(dir){
+
+silenciarVideos();
+
+const carousel = document.getElementById("carousel1");
+const slides = carousel.children.length;
+
+index1 += dir;
+
+if(index1 < 0) index1 = slides - 1;
+if(index1 >= slides) index1 = 0;
+
+carousel.style.transform = `translateX(-${index1 * 100}%)`;
+
+}
+
+/* CARRUSEL 2 */
+function mover2(dir){
+
+silenciarVideos();
+
+const carousel = document.getElementById("carousel2");
+const slides = carousel.children.length;
+
+index2 += dir;
+
+if(index2 < 0) index2 = slides - 1;
+if(index2 >= slides) index2 = 0;
+
+carousel.style.transform = `translateX(-${index2 * 100}%)`;
+
+}
+
+
+</script>
+
+
+<footer>
+
+<div class="footer-contenedor">
+
+<div class="formulario-box">
+<h3>Realizar una consulta</h3>
+
+<form action="https://formsubmit.co/TUEMAIL@gmail.com" method="POST">
+<input type="text" name="nombre" placeholder="Tu nombre" required>
+<input type="email" name="email" placeholder="Tu email" required>
+<textarea name="mensaje" placeholder="Escribí tu consulta aquí..." required></textarea>
+
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_next" value="gracias.html">
+
+<button type="submit">Enviar Consulta</button>
+</form>
+</div>
+
+<div class="contactos-box">
+<h3>Contactos</h3>
+<p>📞 Tel: 2926 404627</p>
+<p>📧 Email: tuemail@gmail.com</p>
+<p>📍 Coronel Suárez, Buenos Aires</p>
+<p><a href="https://wa.me/5492926404627" target="_blank">WhatsApp</a></p>
+<p><a href="https://www.instagram.com/sauloarcucci/" target="_blank">Instagram</a></p>
+<p><a href="https://www.facebook.com/saul.arcucci" target="_blank">Facebook</a></p>
+</div>
+
+</div>
+
+<div class="footer-copy">
+© 2026 Arcucci Saul Pascual Ernesto - Plataforma Profesional
+</div>
+
+</footer>
+</body>
+</html>
