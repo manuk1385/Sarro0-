@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Certificado de Finalización</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:flex-start;
+padding-top:80px;
+background:linear-gradient(135deg,#eef2ff,#f8fafc);
+font-family:"Times New Roman", serif;
+}
+
+.certificado{
+width:1000px;
+background:white;
+padding:70px;
+text-align:center;
+border:10px solid #1e3a8a;
+box-shadow:0 20px 60px rgba(0,0,0,0.2);
+border-radius:8px;
+position:relative;
+}
+
+.certificado:before{
+content:"";
+position:absolute;
+top:15px;
+left:15px;
+right:15px;
+bottom:15px;
+border:2px solid #cbd5e1;
+}
+
+h1{
+font-size:48px;
+margin-bottom:30px;
+}
+
+.texto{
+font-size:22px;
+margin:10px 0;
+}
+
+.nombre{
+font-size:40px;
+font-weight:bold;
+margin:25px 0;
+}
+
+.curso{
+font-size:28px;
+font-weight:bold;
+margin:20px 0;
+}
+
+.fecha{
+font-size:20px;
+margin-top:10px;
+}
+
+.id{
+margin-top:20px;
+font-size:16px;
+color:#444;
+}
+
+button{
+margin-top:40px;
+padding:15px 30px;
+font-size:18px;
+background:#1e3a8a;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+position:relative;
+z-index:10;
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<div class="certificado" id="certificado">
+
+<h1>Certificado de Finalización</h1>
+
+<p class="texto">Sarro0% certifica a:</p>
+
+<div class="nombre" id="nombre">
+Nombre del Estudiante
+</div>
+
+<p class="texto">que finalizó el día</p>
+
+<div class="fecha" id="fecha"></div>
+
+<p class="texto">el curso de</p>
+
+<div class="curso" id="curso">
+Nombre del Curso
+</div>
+
+<div class="id">
+ID Certificado: <span id="certID"></span>
+</div>
+
+<div style="margin-top:30px;">
+<img src="firma.png" style="width:200px;">
+<p><b>Firma del Instructor</b></p>
+</div>
+<button id="descargarBtn">Descargar Certificado</button>
+
+</div>
+
+<script>
+
+/* FECHA */
+
+let hoy = new Date();
+let fecha = hoy.getDate()+"/"+(hoy.getMonth()+1)+"/"+hoy.getFullYear();
+document.getElementById("fecha").innerText = fecha;
+
+/* DATOS */
+
+let nombre = localStorage.getItem("nombreAlumno") || "Nombre del Estudiante";
+let curso = localStorage.getItem("cursoNombre") || "Nombre del Curso";
+
+document.getElementById("nombre").innerText = nombre;
+document.getElementById("curso").innerText = curso;
+
+/* ID */
+
+let id = localStorage.getItem("certID");
+
+if(!id){
+id = "S0-"+Math.floor(Math.random()*100000000);
+localStorage.setItem("certID",id);
+}
+
+document.getElementById("certID").innerText = id;
+
+/* DESCARGAR */
+
+function descargarCertificado(){
+
+let certificado = document.getElementById("certificado");
+
+html2canvas(certificado).then(function(canvas){
+
+let link = document.createElement("a");
+
+link.download = "Certificado_"+nombre+".png";
+
+link.href = canvas.toDataURL();
+
+link.click();
+
+});
+
+}
+
+</script>
+<script>
+
+document.getElementById("descargarBtn").addEventListener("click", descargarCertificado);
+
+</script>
+</body>
+</html>
