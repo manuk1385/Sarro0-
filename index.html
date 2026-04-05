@@ -121,10 +121,22 @@ margin-bottom:80px;
 .catalogos-grid{
 display:grid;
 grid-template-columns:repeat(3, 1fr);
-gap:40px; 
-justify-content:center;
-max-width:800px;
+gap:15px;
+max-width:900px;
 margin:auto;
+} 
+
+@media(max-width:768px){
+  .catalogos-grid{
+    gap:15px;
+  }
+  .catalogo{
+    font-size:32px;
+  }
+  .catalogo-card{
+    min-width:120px;
+    padding:15px;
+  }
 }
 
 .catalogo{
@@ -140,23 +152,26 @@ border-radius:12px;
 min-width:220px;
 box-shadow:0 5px 20px rgba(0,0,0,0.1);
 }
+.catalogo-card{
+cursor:pointer;
+transition:.3s;
+}
+
 
 
 .catalogo-titulo{font-weight:700;}
 
 .subcatalogo{
 position:absolute;
-top:110%; 
+top:100%;
 left:0;
 width:100%;
 background:#fff;
-opacity:0;
-visibility:hidden;
-transition:.3s;
-display:flex;
+border-radius:10px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+display:none;
 flex-direction:column;
-box-shadow:0 10px 20px rgba(0,0,0,0.2);
-z-index:2000; 
+z-index:9999;
 }
 
 .catalogo-card:hover .subcatalogo{
@@ -264,12 +279,6 @@ background:#1ebe5d;
 overflow:hidden; 
 width:100%;
 
-}
-    @media (max-width: 500px) {
-  .card {
-    flex: 1 1 100%; /* ocupa todo el ancho en móviles */
-    padding: 20px;
-  }
 }
 
 .carousel-box{position:relative;}
@@ -708,7 +717,7 @@ Formas de pago disponibles:
   </a>
 </div>
 <div class="card">
-    <a href="Curso2.html" target="_self">
+    <a href="curso2.html" target="_self">
   <img src="Curso.jpeg">
   <h3>Curso modulo 2</h3>
     </a>
@@ -812,7 +821,7 @@ La caja viene con 12 pastillas y te dura casi un año.
 <!-- MEMBRESIA -->
 <section id="membresia" class="section">
 <h2>Membresía Profesional</h2>
-<p>Asesoramiento Profesional Debido a la gran cantidad de consultas que recibo diariamente por teléfono y mensajes, a partir de ahora el asesoramiento técnico personalizado tendrá un valor. Mi experiencia y conocimientos están disponibles para ayudarte a resolver problemas, realizar diagnósticos, orientar trabajos o mejorar tu servicio. Cada consulta implica tiempo, análisis y dedicación profesional. Las personas que cuentan con Membresía Profesional tienen prioridad de atención y acceso a asesoramiento directo dentro de los beneficios incluidos en su membresía. Si no sos miembro, igualmente podés solicitar un asesoramiento puntual por teléfono o videollamada, coordinando previamente el servicio. De esta forma puedo garantizar una atención más organizada, dedicada y de mayor calidad para quienes realmente necesitan el acompañamiento profesional.</p>
+<p>Asesoramiento técnico exclusivo</p>
 <div class="grid">
 <div class="card">
 <img src="membresia.png">
@@ -904,6 +913,31 @@ contenedor.appendChild(div);
 }
 });
 }
+
+document.querySelectorAll(".catalogo-card").forEach(card=>{
+    card.addEventListener("click", (e)=>{
+
+        // cerrar todos
+        document.querySelectorAll(".subcatalogo").forEach(s=>{
+            s.style.display = "none";
+        });
+
+        // abrir el actual
+        const sub = card.querySelector(".subcatalogo");
+        if(sub){
+            sub.style.display = "flex";
+        }
+
+        e.stopPropagation();
+    });
+});
+
+
+document.addEventListener("click", ()=>{
+    document.querySelectorAll(".subcatalogo").forEach(s=>{
+        s.style.display = "none";
+    });
+});
 </script>
 
 </body>
