@@ -127,16 +127,32 @@ margin:auto;
 } 
 
 @media(max-width:768px){
-  .catalogos-grid{
-    gap:15px;
-  }
-  .catalogo{
-    font-size:32px;
-  }
-  .catalogo-card{
-    min-width:120px;
-    padding:15px;
-  }
+
+.ejemplos-grid{
+    grid-template-columns:1fr;
+}
+
+.catalogos-grid{
+    grid-template-columns:repeat(3, 1fr); /* 🔥 SIEMPRE 3 */
+    gap:8px;
+    padding:10px;
+}
+
+.catalogo-card{
+    padding:10px;
+}
+
+.catalogo-titulo{
+    font-size:12px;
+}
+
+.hero h1{
+    font-size:28px;
+}
+
+.search-box input{
+    width:150px;
+}
 }
 
 .catalogo{
