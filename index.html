@@ -1,637 +1,904 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <link rel="icon" href="saul.png">
+    <link rel="icon" href="saul.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arcucci Saul Pascual Ernesto</title>
+
+<title>Sarro Cero | Eliminación de Sarro, Franquicias y Soluciones Profesionales</title>
+
+<meta name="description" content="Eliminación de sarro en agua, sarro cero, sarro 0%, servicios profesionales, cursos, franquicias y productos. Más de 20 años de experiencia en soluciones contra sarro en Argentina.">
+<meta name="keywords" content="sarro, eliminar sarro, agua dura, antisarro, tratamiento de agua, franquicia sarro, cursos sarro, Sarro Cero Argentina">
+<meta name="author" content="Sarro Cero">
+
+<!-- SEO LOCAL -->
+<meta name="geo.region" content="AR">
+<meta name="geo.placename" content="Argentina">
+
+<!-- Open Graph (REDES) -->
+<meta property="og:title" content="Sarro Cero - Soluciones contra el sarro">
+<meta property="og:description" content="Servicios, productos y franquicias para eliminar el sarro de forma profesional.">
+<meta property="og:image" content="logo.png">
+<meta property="og:type" content="website">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="logo.png">
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilos.css">
+
+<!-- SCHEMA (MUY IMPORTANTE) -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "LocalBusiness",
+"name": "Sarro Cero",
+"image": "logo.png",
+"description": "Soluciones profesionales contra el sarro, servicios, productos y franquicias.",
+"address": {
+"@type": "PostalAddress",
+"addressCountry": "AR"
+},
+"telephone": "+5492926404627"
+}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Inter',sans-serif;scroll-behavior:smooth;}
+body{background:#f4f6f8;color:#222;}
+html{scroll-padding-top:90px;}
+
+/* HEADER */
+.header{
+background:#fff;
+padding:15px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+position:sticky;
+top:0;
+z-index:1000;
+}
+.logo{font-size:22px;font-weight:800;}
+.search-box input{
+padding:10px;
+border-radius:10px;
+border:1px solid #ddd;
+width:250px;
+}
+.sugerencias{
+position:absolute;
+top:45px;
+left:0;
+width:100%;
+background:#fff;
+border:1px solid #ddd;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+z-index:1000;
+}
+
+.sugerencias div{
+padding:10px;
+cursor:pointer;
+border-bottom:1px solid #eee;
+}
+
+.sugerencias div:hover{
+background:#f4f6f8;
+}
+
+/* HERO */
+.hero{
+background:linear-gradient(135deg,#3483fa,#2968c8);
+padding:90px 20px;
+text-align:center;
+color:#fff;
+border-radius:0 0 30px 30px;
+}
+.hero h1{font-size:40px;margin-bottom:10px;}
+.cta{
+margin-top:20px;
+display:inline-block;
+background:#25D366;
+padding:14px 24px;
+border-radius:12px;
+color:#fff;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+.cta:hover{transform:scale(1.05);}
+
+/* CATALOGOS */
+.catalogos-home{
+padding:40px;
+text-align:center;
+margin-bottom:80px;
+}
+
+.catalogos-grid{
+display:grid;
+grid-template-columns:repeat(3, 1fr);
+gap:40px; 
+justify-content:center;
+max-width:800px;
+margin:auto;
+}
+
+.catalogo{
+    font-size:50px;
+    font-weight:bold;
+    margin-bottom: 40px;;
+}
+.catalogo-card{
+position:relative;
+background:#fff;
+padding:20px;
+border-radius:12px;
+min-width:220px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+
+.catalogo-titulo{font-weight:700;}
+
+.subcatalogo{
+position:absolute;
+top:110%; 
+left:0;
+width:100%;
+background:#fff;
+opacity:0;
+visibility:hidden;
+transition:.3s;
+display:flex;
+flex-direction:column;
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+z-index:2000; 
+}
+
+.catalogo-card:hover .subcatalogo{
+opacity:1;
+visibility:visible;
+}
+
+
+.subcatalogo a{
+padding:10px;
+text-decoration:none;
+color:#333;
+border-bottom:1px solid #eee;
+}
+.subcatalogo a:hover{background:#f4f6f8;}
+
+/* SECCIONES */
+.section{
+max-width:1200px;
+margin:40px auto;
+padding:40px;
+background:#fff;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.section h2{text-align:center;margin-bottom:10px;}
+.section p{text-align:center;margin-bottom:25px;color:#555;}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+/* CARD */
+.card{
+background:#fff;
+padding:20px;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+transition:.3s;
+}
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+.card img{
+width:100%;
+height:200px;
+object-fit:contain;
+}
+.section h2{
+    text-align:center;
+    margin-bottom:20px;
+    font-size:30px;
+    font-weight:800;
+    color:#111;
+}
+.description{
+    font-size:15px;
+    line-height:1.8;
+    color:#444;
+    text-align:justify;
+    max-width:900px;
+    margin:0 auto 25px auto;
+}
+.btn, .btn-whatsapp{
+display:block;
+margin-top:10px;
+background:#25D366;
+color:#fff;
+text-align:center;
+padding:10px;
+border-radius:10px;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+.btn:hover, .btn-whatsapp:hover{
+transform:scale(1.05);
+background:#1ebe5d;
+}
+
+/* CARRUSEL */
+.carousel-container{
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel{
+    display: flex;
+    transition: transform 0.4s ease;
+}
+
+.carousel img,
+.carousel video{
+    width: 100%;
+    flex: 0 0 100%;
+}
+
+
+.card{
+overflow:hidden; 
+width:100%;
+
+}
+
+.carousel-box{position:relative;}
+
+.arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:#00000090;
+    color:#fff;
+    border:none;
+    padding:8px;
+    border-radius:50%;
+    cursor:pointer;
+    z-index:10; 
+}
+
+.left{left:5px;}
+.right{right:5px;}
+
+/* EJEMPLOS */
+.ejemplos-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+}
+
+/* FLOAT */
+.float{
+position:fixed;
+bottom:20px;
+right:20px;
+z-index:999;
+}
+.float img{
+width:60px;
+border-radius:50%;
+box-shadow:0 5px 20px rgba(0,0,0,.3);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.ejemplos-grid{grid-template-columns:1fr;}
+.catalogos-grid{flex-direction:column;align-items:center;}
+.hero h1{font-size:28px;}
+.search-box input{width:150px;}
+}
+.carousel video{
+min-width:100%;
+height:200px;
+object-fit:cover;
+border-radius:10px;
+}
+</style>
 </head>
 
 <body>
 
-<header class="header-ml">
-
-<div class="brand">
-<img src="saul.png">
-<div class="logo">Sarro0%</div>
+<header class="header">
+<div class="logo">Sarro Cero</div>
+<img src="saul.png" alt="logo principal" style="width:50px;height:50px;border-radius:50%; position:absolute; margin-left:120px;">
+<div class="search-box" style="position:relative;">
+<input type="text" placeholder="Buscar..." onkeyup="buscar(); sugerencias()" id="buscador">
+<div id="sugerencias" class="sugerencias"></div>
 </div>
-
-<div class="search-box" style="position:relative">
-
-<input id="buscador" type="text" placeholder="Buscar productos, cursos o servicios">
-
-<button onclick="buscarProducto()">🔍</button>
-
-<div id="sugerencias"></div>
-
-</div>
-
 </header>
 
-<section class="presentacion">
-<div class="card-presentacion">
-
-<img src="foto cara.jpg">
-
-<h1>Arcucci Saul</h1>
-
-<p class="descripcion-central">
-Especialista en soluciones profesionales de Sarro.
-</p>
-
-<div class="contacto-hover" onclick="toggleContacto(event)">
-Contactos
-
-<div class="contacto-menu" id="contactoMenu">
-<a href="https://wa.me/5492926404627" target="_blank">WhatsApp</a>
-<a href="https://www.instagram.com/sauloarcucci/" target="_blank">Instagram</a>
-<a href="https://www.facebook.com/saul.arcucci" target="_blank">Facebook</a>
-</div>
-
-</div>
-</div>
+<section class="hero">
+    <img src="fotologo.jpeg" alt="Sarro Cero Logo" style="width:250px;
+    height:250px; margin-bottom:20px; border-radius:40%;border:4px solid #fff;">
+<h1>Soluciones profesionales contra el sarro</h1>
+<p>+20 años de experiencia</p>
+<a class="cta" href="https://wa.me/5492926404627">Consultar por WhatsApp</a>
 </section>
 
+<!-- CATALOGOS -->
 <section class="catalogos-home">
-
-<h2>Catálogos</h2>
+<h2 class="catalogo">Catálogos</h2>
 
 <div class="catalogos-grid">
 
-<div class="catalogo-card" onclick="location.href='#franquicia'">
-<div class="catalogo-titulo">Franquicia Sarro 0%</div>
+<div class="catalogo-card">
+<div class="catalogo-titulo">Franquicias</div>
 <div class="subcatalogo">
-<a href="#franquicia1">Franquicia Básica</a>
-<a href="#franquicia1">Franquicia Profesional</a>
-<a href="#franquicia1">Franquicia Premium</a>
+<a href="#franquicia">Hogar</a>
+<a href="#franquicia">Comercio</a>
+<a href="#franquicia">Industria</a>
 </div>
 </div>
 
-<div class="catalogo-card" onclick="location.href='#cursos'">
-<div class="catalogo-titulo">Curso Calefones Ionizados</div>
-
+<div class="catalogo-card">
+<div class="catalogo-titulo">Cursos</div>
 <div class="subcatalogo">
-<a href="#cursos">Curso Nivel 1</a>
-<a href="#cursos">Curso Nivel 2</a>
-<a href="#cursos">Curso Nivel 3</a>
+<a href="#cursos">Nivel 1</a>
+<a href="#cursos">Nivel 2</a>
 </div>
 </div>
 
-<div class="catalogo-card" onclick="location.href='#deteccion'">
+<div class="catalogo-card">
 <div class="catalogo-titulo">Detección de Fugas</div>
-
 <div class="subcatalogo">
-<a href="#deteccion">Detección Hogar</a>
-<a href="#deteccion">Detección Profesional</a>
-<a href="#deteccion">Informe Termográfico</a>
+<a href="#deteccion">Detección</a>
 </div>
 </div>
 
-<div class="catalogo-card" onclick="location.href='#pastillas'">
+<div class="catalogo-card">
 <div class="catalogo-titulo">Pastillas</div>
-
 <div class="subcatalogo">
-<a href="#pastillas">Pastilla ASPE</a>
+<a href="#pastillas">Pastilla para lavarropa</a>
 </div>
 </div>
 
-<div class="catalogo-card" onclick="location.href='#membresia'">
+<div class="catalogo-card">
+<div class="catalogo-titulo">Alquiler</div>
+<div class="subcatalogo">
+<a href="#alquiler">Quincho</a>
+</div>
+</div>
+
+<div class="catalogo-card">
 <div class="catalogo-titulo">Membresía</div>
-
 <div class="subcatalogo">
-<a href="#membresia">Membresía Profesional</a>
-</div>
-</div>
-
-<div class="catalogo-card" onclick="location.href='#alquiler'">
-<div class="catalogo-titulo">Alquiler Temporario</div>
-
-<div class="subcatalogo">
-<a href="#alquiler">Quincho Temporario</a>
+<a href="#membresia">Membresía</a>
 </div>
 </div>
 
 </div>
-
 </section>
-
-
 
 <!-- EJEMPLOS -->
-<section class="ejemplos-section">
+<!-- EJEMPLOS -->
+<section class="section">
+<h2>Resultados Reales</h2>
+<p class="description">
+Mirá cómo eliminamos el sarro y recuperamos instalaciones sin romper ni hacer obras.
+Resultados visibles en pocas horas.
+</p>
 
-<h2 class="titulo-principal">Ejemplos</h2>
+<div class="grid">
 
-<div class="ejemplos-grid">
-
-<!-- SARRO -->
-<div class="ejemplo-columna">
-
-<h3>Sarro 0%</h3>
+<!-- ANTES Y DESPUES -->
+<div class="card">
+<h3>Antes vs Después</h3>
 
 <div class="carousel-box">
-
-<button class="carousel-btn prev" onclick="mover1(-1)">❮</button>
+<button class="arrow left" onclick="move('ej1',-1)">❮</button>
 
 <div class="carousel-container">
+<div class="carousel" id="ej1">
 
-<div class="carousel" id="carousel1">
-
-<div class="slide">
-<img src="pastillas.jpeg">
-</div>
-
-
-<div class="slide">
-<video src="videolavarropa.mp4" muted controls></video>
-</div>
-
-
-<div class="slide">
-<img src="Curso.jpeg">
-</div>
-
-<div class="slide">
 <img src="franquicia1.jpeg">
-</div>
-
-<div class="slide">
 <img src="franquicia2.jpeg">
+<img src="franquicia3.jpeg">
+
+</div>
 </div>
 
-<div class="slide">
+<button class="arrow right" onclick="move('ej1',1)">❯</button>
+</div>
+
+<p style="margin-top:10px; text-align:center;">
+Eliminación de sarro en cañerías y equipos.
+</p>
+</div>
+
+<!-- TRABAJOS EN HOGAR -->
+<div class="card">
+<h3>Trabajos en Hogar</h3>
+
+<div class="carousel-box">
+<button class="arrow left" onclick="move('ej2',-1)">❮</button>
+
+<div class="carousel-container">
+<div class="carousel" id="ej2">
+
 <img src="franquicia4.jpeg">
-</div>
-
-<div class="slide">
 <img src="franquicia5.jpeg">
-</div>
+<img src="franquicia6.jpeg">
 
 </div>
 </div>
 
-<button class="carousel-btn next" onclick="mover1(1)">❯</button>
+<button class="arrow right" onclick="move('ej2',1)">❯</button>
+</div>
+
+<p style="margin-top:10px; text-align:center;">
+Recuperación de presión y limpieza completa.
+</p>
+</div>
+
+<!-- INDUSTRIA / COMERCIO -->
+<div class="card">
+<h3>Industria y Comercio</h3>
+
+<div class="carousel-box">
+<button class="arrow left" onclick="move('ej3',-1)">❮</button>
+
+<div class="carousel-container">
+<div class="carousel" id="ej3">
+
+<img src="franquiciai3.jpeg">
+<img src="franquiciai5.jpeg">
+<img src="franquiciai7.jpeg">
 
 </div>
 </div>
 
+<button class="arrow right" onclick="move('ej3',1)">❯</button>
+</div>
+
+<p style="margin-top:10px; text-align:center;">
+Equipos industriales restaurados sin parar producción.
+</p>
+</div>
 
 <!-- QUINCHO -->
-<div class="ejemplo-columna">
-
-<h3>Quincho (Alquiler Temporario)</h3>
+<div class="card">
+<h3>Espacio Quincho</h3>
 
 <div class="carousel-box">
-
-<button class="carousel-btn prev" onclick="mover2(-1)">❮</button>
+<button class="arrow left" onclick="move('ej4',-1)">❮</button>
 
 <div class="carousel-container">
+<div class="carousel" id="ej4">
 
-<div class="carousel" id="carousel2">
-
-<div class="slide">
 <img src="quincho.png">
-</div>
-
-<div class="slide">
-<video src="quinchovideo.cur.mp4" muted controls></video>
-</div>
-
-<div class="slide">
-<video src="quinchocamas.mp4" muted controls></video>
-</div>
-
+<img src="quincho2.jpeg">
+<img src="quincho3.jpeg">
+<img src="quincho4.jpeg">
+<img src="quincho5.jpeg">
 </div>
 </div>
 
-<button class="carousel-btn next" onclick="mover2(1)">❯</button>
-
-</div>
+<button class="arrow right" onclick="move('ej4',1)">❯</button>
 </div>
 
+<p style="margin-top:10px; text-align:center;">
+Espacio disponible para alquiler y eventos.
+</p>
 </div>
 
+</div>
 </section>
 
-<!--productos-->
-<section id="franquicia" class="seccion">
 
-<h2>Franquicia Sarro 0%</h2>
-<p class="descripcion-seccion">
-Conocé nuestras opciones de franquicia para ofrecer el sistema Sarro 0% y comenzar tu propio servicio profesional.
+<!-- FRANQUICIAS -->
+<section id="franquicia" class="section">
+<h2>Franquicias</h2>
+<p class="description">
+
+<strong>🔑 La franquicia que el mercado necesita</strong>
+Descubrí la tecnología que restaura sistemas hídricos en horas, sin romper ni detener la producción.
+
+<strong>Mercados principales</strong>
+1. HOGARES: Recupera la presión de agua, elimina el sarro de las instalaciones y reduce el consumo energético, ¡sin costosas obras ni destrozos! En horas .<br>
+2. Comercios: Soluciona problemas de sarro .<br>
+3. Industria: Evita la pérdida de producción. Dejamos tuberías y maquinarias como nuevas en horas, garantizando la continuidad operacional y el máximo rendimiento..
+
+<strong>Ventajas</strong>
+​Tu Ventaja Competitiva:
+​Tecnología SIN OBRAS: Nuestro sistema permite limpiar y restaurar la instalación en el acto, eliminando la principal barrera (el costo y el tiempo) de los métodos tradicionales.
+​Alta Demanda Todo el Año: El problema del sarro es constante y universal.
+​Modelo de Negocio Probado y Rentable.
+​Mira el video y solicita tu Dossier de Franquicia. ¡El futuro del mantenimiento ya está aquí!
+​Esta opción comunica el valor único de la franquicia (la tecnología sin obras) y muestra al potencial franquiciado que tiene clientes en todos los sectores, lo que asegura un negocio escalable y único en Argentina. Tenemos más de 20 años de trayectoria y conocimiento
+
+<strong>Experiencia</strong>
+Más de 20 años en el mercado con resultados comprobados.
+
 </p>
-
 <div class="grid">
 
-<div class="card producto" data-nombre="franquicia basica" onclick="location.href='franquicia.html'">
+<div class="card">
+<h3>Hogar</h3>
+<div class="carousel-box">
+<button class="arrow left" onclick="move('fh',-1)">❮</button>
+<div class="carousel-container">
+<div class="carousel" id="fh">
 <img src="franquicia1.jpeg">
-<h3>Franquicia Hogares</h3>
-<a class="btn-whatsapp" 
-href="https://wa.me/5492926404627" 
-target="_blank"
-onclick="event.stopPropagation()">
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
-WhatsApp
-</a>
-</div>
-
-<div class="card producto" data-nombre="franquicia profesional" onclick="location.href='franquicia2.html'">
 <img src="franquicia2.jpeg">
-<h3>Franquicia Comercios y Edificios</h3>
-<a class="btn-whatsapp" 
-href="https://wa.me/5492926404627" 
-target="_blank"
-onclick="event.stopPropagation()">
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
-WhatsApp
-</a>
-</div>
-
-<div class="card producto" data-nombre="franquicia premium" onclick="location.href='franquicia3.html'">
+<img src="franquicia3.jpeg">
 <img src="franquicia4.jpeg">
-<h3>Franquicia Industrial</h3>
-<a class="btn-whatsapp" 
-href="https://wa.me/5492926404627" 
-target="_blank"
-onclick="event.stopPropagation()">
+<img src="franquicia5.jpeg">
+<img src="franquicia6.jpeg">
+<img src="franquicia7.jpeg">
+<img src="franquicia8.jpeg">
+<img src="franquicia9.jpeg">
+</div>
+</div>
+<button class="arrow right" onclick="move('fh',1)">❯</button>
+</div>
+<a class="btn" href="https://wa.me/5492926404627">Consultar</a>
+</div>
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
-WhatsApp
-</a>
+<div class="card">
+<h3>Comercio</h3>
+<div class="carousel-box">
+<button class="arrow left" onclick="move('fc',-1)">❮</button>
+<div class="carousel-container">
+<div class="carousel" id="fc">
+<img src="franquiciac1.jpeg">
+<img src="franquiciac2.jpeg">
+<img src="franquiciac3.jpeg">
+<img src="franquiciac4.jpeg">
+<img src="franquiciac5.jpeg">
+<img src="franquiciac6.jpeg">
+<img src="franquiciac7.jpeg">
+<img src="franquiciac8.jpeg">
+<img src="franquiciac9.jpeg">
+</div>
+</div>
+<button class="arrow right" onclick="move('fc',1)">❯</button>
+</div>
+<a class="btn" href="https://wa.me/5492926404627">Consultar</a>
+</div>
+
+<div class="card">
+<h3>Industria</h3>
+<div class="carousel-box">
+<button class="arrow left" onclick="move('fi',-1)">❮</button>
+<div class="carousel-container">
+<div class="carousel" id="fi">
+<img src="franquiciai1.jpeg">
+<img src="franquiciai2.jpeg">
+<img src="franquiciai3.jpeg">
+<img src="franquiciai4.jpeg">
+<img src="franquiciai5.jpeg">
+<img src="franquiciai6.jpeg">
+<img src="franquiciai7.jpeg">
+<img src="franquiciai8.jpeg">
+<img src="franquiciai9.jpeg">
+<img src="franquiciai10.jpeg">
+<img src="franquiciai11.jpeg">
+<img src="franquiciai12.jpeg">
+
+</div>
+</div>
+<button class="arrow right" onclick="move('fi',1)">❯</button>
+</div>
+<a class="btn" href="https://wa.me/5492926404627">Consultar</a>
 </div>
 
 </div>
 </section>
 
-<section id="deteccion" class="seccion">
-
+<!-- DETECCION DE FUGAS -->
+<section id="deteccion" class="section">
 <h2>Detección de Fugas</h2>
-<p class="descripcion-seccion">
-Servicio especializado para localizar fugas de agua ocultas en cañerías, pisos o paredes utilizando técnicas y equipos profesionales que permiten detectar el problema sin romper innecesariamente.
+
+<p class="description">
+Búsqueda de fugas en instalaciones utilizando tecnología de cámara termográfica.
+Localizamos pérdidas de agua con precisión sin romper paredes ni pisos, ahorrando tiempo, dinero y evitando daños innecesarios.
 </p>
+
 <div class="grid">
 
-<div class="card producto" data-nombre="deteccion hogar" onclick="location.href='deteccion1.html'">
-<img src="deteccion1.jpg">
-<h3>Detección Hogar</h3>
-<a class="btn-whatsapp" 
-href="https://wa.me/5492926404627" 
-target="_blank"
-onclick="event.stopPropagation()">
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
-WhatsApp
-</a>
+<div class="card">
+<h3>Detección profesional</h3>
+
+<div class="carousel-box">
+<button class="arrow left" onclick="move('fd',-1)">❮</button>
+
+<div class="carousel-container">
+<div class="carousel" id="fd">
+
+<video controls>
+<source src="fuga1.mp4" type="video/mp4">
+</video>
+
+<video controls>
+<source src="videodetecciondefugas.mp4" type="video/mp4">
+</video>
+
+</div>
 </div>
 
-<div class="card producto" data-nombre="deteccion profesional" onclick="location.href='deteccion2.html'">
-<img src="deteccion2.jpg">
-<h3>Detección Profesional</h3>
-<a class="btn-whatsapp" 
-href="https://wa.me/5492926404627" 
-target="_blank"
-onclick="event.stopPropagation()">
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
-WhatsApp
-</a>
+<button class="arrow right" onclick="move('fd',1)">❯</button>
 </div>
 
-<div class="card producto" data-nombre="informe termografico" onclick="location.href='deteccion3.html'">
-<img src="deteccion3.jpg">
-<h3>Informe Termográfico</h3>
-<a class="btn-whatsapp" 
-href="https://wa.me/5492926404627" 
-target="_blank"
-onclick="event.stopPropagation()">
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
-WhatsApp
+<p style="margin-top:15px; text-align:center;">
+Búsquedas de fugas en instalaciones con cámara termografica
+</p>
+
+<a class="btn-whatsapp" href="https://wa.me/5492926404627" target="_blank">
+Consultar por WhatsApp
 </a>
+
 </div>
 
 </div>
 </section>
 
-<section id="cursos" class="seccion">
+<!-- CURSOS -->
+<section id="cursos" class="section">
+<h2>Cursos</h2>
+<p class="description">
+El Curso Completo de calefones ionizados tiene un costo por única vez . 
+Este curso lo podrás bajar completamente en tu celular 📱, ofreciéndote una formación profesional de alto nivel para que adquieras dominio en la reparación y el mantenimiento de sistemas ionizados, una competencia clave en el mercado actual.
 
-<h2>Curso Calefones Ionizados</h2>
-<p class="descripcion-seccion">
-Capacitación completa para aprender a trabajar con calefones ionizados y sistema Sarro 0%. Desde nivel básico hasta avanzado, para salir preparado para ofrecer el servicio profesional.
+Método de Aprendizaje 🏛
+💻 Aprenderás desde tu hogar, en los momentos que prefieras, disponible las 24 horas del día, los 7 días de la semana. Este curso es de acceso ilimitado. Podrás ingresar de inmediato a la plataforma de estudio en DRIVE, donde encontrarás las lecciones en videos y los métodos técnicos listos para ser aplicados, explicados paso a paso. Podrás acceder desde tu teléfono móvil, tablet o computadora.
+
+✅ No se requiere experiencia previa en electronica 
+✅ 100% en video
+✅ Opción de descarga disponible
+El curso tendrá una duración dependiendo del tiempo que le dediques. La duración varía según la frecuencia con la que lo realices, pudiendo completarlo antes o después.
+
+¿Cómo recibirás el material? 📥
+📧 Una vez realizado el pago, y enviando el comprobante de pago, le enviamos el enlace de acceso directo a la plataforma a través de WhatsApp.
+
+Preguntas frecuentes 👇
+🤔 ¿Recibiré el enlace del drive tras el pago? Sí. La entrega de los cursos se realiza vía WhatsApp con un link donde podras entrar y descargar los videos. Una vez abonado el pack. 
+
+🤔 ¿Se pueden descargar los cursos sin inconvenientes? Sí, puedes descargarlos cuantas veces quieras, sin limitaciones.
+
+🤔 ¿El pago es único? Sí, solo debes realizar un pago único, enviando el comprobante de pago.
+
+🤔 ¿Cuándo comenzaré a notar los resultados? Las lecciones están diseñadas para que puedas ver resultados desde el  primer momento . Sin embargo, todo dependerá del nivel de compromiso que asumas.
+
+Formas de pago disponibles:
+✅ Transferencia bancaria
+✅ Mercado Pago
+✅ Billeteras virtuales
+
+¡No dejes pasar la oportunidad de formarte a tu propio ritmo! Este es el curso que estabas buscando. ¡Aprovecha esta oferta por tiempo limitado! ⏰
 </p>
 <div class="grid">
+<div class="card">
+    <a href="curso1.html" target="_self">
+  <img src="Curso.jpeg">
+  <h3>Curso modulo 1</h3>
+    </a>
 
-<div class="card producto" data-nombre="curso nivel 1" onclick="location.href='curso1.html'">
-<img src="curso1.jpg">
-<h3>Curso Nivel 1</h3>
-<a class="btn-whatsapp" 
-href="https://wa.me/5492926404627" 
-target="_blank"
-onclick="event.stopPropagation()">
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
-WhatsApp
-</a>
+  <a class="btn-whatsapp" href="https://wa.me/5492926404627" target="_blank">
+   Consultar
+  </a>
 </div>
-
-<div class="card producto" data-nombre="curso nivel 2" onclick="location.href='curso2.html'">
-<img src="curso2.jpg">
-<h3>Curso Nivel 2</h3>
-<a class="btn-whatsapp" 
-href="https://wa.me/5492926404627" 
-target="_blank"
-onclick="event.stopPropagation()">
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
-WhatsApp
-</a>
+<div class="card">
+    <a href="curso2.html" target="_self">
+  <img src="Curso.jpeg">
+  <h3>Curso modulo 2</h3>
+    </a>
+  <a class="btn-whatsapp" href="https://wa.me/5492926404627" target="_blank">
+    Consutlar
+  </a>
 </div>
-
-<div class="card producto" data-nombre="curso nivel 3" onclick="location.href='curso3.html'">
-<img src="curso3.jpg">
-<h3>Curso Nivel 3</h3>
-<a class="btn-whatsapp" 
-href="https://wa.me/5492926404627" 
-target="_blank"
-onclick="event.stopPropagation()">
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
-WhatsApp
-</a>
-</div>
-
 </div>
 </section>
 
-<section id="pastillas" class="seccion">
-
-<h2>Pastillas Aspe</h2>
-<p class="descripcion-seccion">
-Pastillas de alta calidad para eliminar el sarro de lavarropa.
-</p>
+<!-- PRODUCTOS -->
+ 
+<section id="pastillas" class="section">
+    
+<h2>Pastillas</h2>
+<p class="description">​¡Cuida lo que no ves!!!! 🧐 El sarro que se pega al tambor causa:
+​1️⃣ Desbalanceo cuando centrifuga: Al centrifugar, no gira centrado y rompe los rulemanes. ⚙️💥
+2️⃣ Hogar de moho: Favorece la aparición de hongos y olor desagradable. 🍄🤢
+3️⃣ Ropa sucia: Al desprenderse el moho  ensucia las prendas que acabás de lavar. 👕🚫
+​¡Cortá el problema de raíz con nuestra solución! 🚀
+​✨ GUÍA DE MANTENIMIENTO PROFESIONAL CON SARRO CERO ✨
+​¡Hola! Para que tu lavarropas funcione como el primer día, nuestras pastillas están diseñadas para eliminar suciedad, sarro y moho acumulado en la parte exterior del tambor 🧼🦠🚫
+​📅 PLAN DE LIMPIEZA SEGÚN TU USO:
+​1️⃣ SI NUNCA SE REALIZÓ UNA LIMPIEZA: Realizá la primera y segunda  limpieza con 2 pastillas con un intervalo de 15 dias . ¡Es vital para remover años de sarro y moho acumulado! 🧼🧼
+2️⃣ USO INTENSIVO: (Más de 30 lavados al mes) Lavar cada 15 días con 1 PASTILLA. 🔄
+3️⃣ MANTENIMIENTO NORMAL: ( Menos de 30 lavados al mes ).Con 1 PASTILLA al mes mantenés tu equipo protegido. ✅
+​⚙️ CONFIGURACIÓN IDEAL (Con el lavarropas VACÍO):
+✅ Programa: FRAZADAS (o el ciclo más largo y potente).
+✅ Nivel de Agua: ALTO.
+✅ Temperatura: CALIENTE 🌡️ (o disolver la pastilla previamente en agua caliente a 60° y pones dentro el liquido ).
+✅ Opción: REMOJO (ayuda a que el producto penetre en el sarro duro).
+​⚠️ ¡CONSEJO PROFESIONAL! ⚠️
+Al terminar, recordá limpiar siempre el filtro de la bomba (la tapita de abajo) y el filtro de pelusas. 🧽💦.
+La caja viene con 12 pastillas y te dura casi un año.
+​🛠️ Sarro Cero de Saul Arcucci cualquier duda,  me consultas,  
+📲 WhatsApp: 2926-404627</p>
 <div class="grid">
 
-<div class="card producto" data-nombre="pastilla aspe" onclick="location.href='pastilla1.html'">
+<div class="card">
+        <a href="pastilla1.html" target="_self">
 <img src="pastillas.jpeg">
-<h3>Pastilla ASPE</h3>
-<a class="btn-whatsapp" 
-href="https://wa.me/5492926404627" 
-target="_blank"
-onclick="event.stopPropagation()">
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
-WhatsApp
+<h3>Pastillas para Lavarropas</h3>
 </a>
+<a class="btn" href="https://wa.me/5492926404627">Comprar</a>
 </div>
-
 </div>
 </section>
 
-
-<section id="alquiler" class="seccion">
-
-<h2>Alquiler Temporario</h2>
-<p class="descripcion-seccion">
-Lugar para alquilar por dia, disponible para dormir, uso de pileta, fogon, parrilla, baños y mas. Ideal para reuniones o simplemente disfrutar de un día al aire libre.
-</p>
+<!-- ALQUILER -->
+<section id="alquiler" class="section">
+<h2>Alquiler</h2>
+<p class="description">​🏡 ¡Hola! Un gusto saludarte.
+​Somos  tu alojamiento temporario en Coronel Suárez. Queremos ofrecerte el mejor lugar para tu estadía o un día de relax.
+​🛌 Opción 1: Hospedaje (Cabaña hasta 4 personas)
+​Nuestra cabaña está totalmente equipada para que disfrutes sin preocupaciones:
+​🛏️ Comodidades: Cabaña hasta 4 personas con camas de una plaza. ¡Ropa de cama incluida!
+​🍳 Equipamiento: importante la cabaña NO  cuenta con cocina ni anafe para cocinar , solo microondas para calentar alimentos.  Cuenta con pava eléctrica, vajilla completa, freezer, Smart TV, Wi-Fi.
+​❄️🔥 Climatización: Aire acondicionado (frío/calor) y estufa ecológica a leña.
+​🔥 Exteriores: Fogón y "fogón sulky".
+​🚗 Seguridad: Lugar interno para guardar el auto y patio monitoreado.
+​⚠️ Importante para tu reserva de Cabaña:
+​Costo: $------- por noche (hasta 4 personas).
+​Horario (Check-in/out): Ingreso a partir de las 11:30 hs. y egreso a las 10:00 hs.
+​A tener en cuenta: El huésped solo debe traer sus toallas. La ropa de cama está incluida.
+​Regla: No se aceptan más huéspedes de los comprometidos en la reserva.
+​🏊 Opción 2: Día de Piscina y Relax (Pase por el día)
+​Ideal para disfrutar en familia o amigos:
+​👨‍👩‍👧‍👦 Capacidad: Hasta 10 personas.
+​Costo: $------- por el día.
+​Horario: Ingreso a partir de las 11:00 hs. y egreso a las 22:00 hs.
+​🔑 Proceso de Reserva
+​Seña: Para que quede reservado, se requiere el pago del costo de un día/noche como seña.
+​Pago Total: El saldo restante se abona en el momento de la entrega de la llave.
+​Contacto: La reserva se confirma directamente por WhatsApp.
+​Ante cualquier duda, estamos a tu disposición.
+​Atentamente, Saúl Arcucci
+📲 Cel: 2926-404627 (Mejor por WhatsApp)</p>
 <div class="grid">
-
-<div class="card producto" data-nombre="quincho alquiler" onclick="location.href='quincho.html'">
-<img src="quincho.png">
+<div class="card">
 <h3>Quincho</h3>
-<a class="btn-whatsapp" 
-href="https://wa.me/5492926404627" 
-target="_blank"
-onclick="event.stopPropagation()">
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
-WhatsApp
-</a>
-
+<div class="carousel-box">
+<button class="arrow left" onclick="move('alq',-1)">❮</button>
+<div class="carousel-container">
+<div class="carousel" id="alq">
+<img src="quincho.png">
+<img src="quincho2.jpeg">
+<img src="quincho3.jpeg">
+<img src="quincho4.jpeg">
+<img src="quincho5.jpeg">
+<img src="quincho6.jpeg">
+<video controls src="quinchovideo.cur.mp4" type="video/mp4"></video>
+</div>
+</div>
+<button class="arrow right" onclick="move('alq',1)">❯</button>
+</div>
+<a class="btn" href="https://wa.me/5492926404627">Reservar</a>
+</div>
 </div>
 </section>
 
-<section id="membresia" class="seccion">
-
+<!-- MEMBRESIA -->
+<section id="membresia" class="section">
 <h2>Membresía Profesional</h2>
-  <p class="descripcion-seccion">
-Asesoramiento Profesional
-
-Debido a la gran cantidad de consultas que recibo diariamente por teléfono y mensajes, a partir de ahora el asesoramiento técnico personalizado tendrá un valor.
-
-Mi experiencia y conocimientos están disponibles para ayudarte a resolver problemas, realizar diagnósticos, orientar trabajos o mejorar tu servicio. Cada consulta implica tiempo, análisis y dedicación profesional.
-
-Las personas que cuentan con Membresía Profesional tienen prioridad de atención y acceso a asesoramiento directo dentro de los beneficios incluidos en su membresía.
-
-Si no sos miembro, igualmente podés solicitar un asesoramiento puntual por teléfono o videollamada, coordinando previamente el servicio.
-
-De esta forma puedo garantizar una atención más organizada, dedicada y de mayor calidad para quienes realmente necesitan el acompañamiento profesional.
-  </p>
+<p>Asesoramiento técnico exclusivo</p>
 <div class="grid">
-
-<div class="card producto" data-nombre="membresia profesional">
+<div class="card">
 <img src="membresia.png">
 <h3>Membresía</h3>
-<a class="btn-whatsapp" 
-href="https://wa.me/5492926404627" 
-target="_blank"
-onclick="event.stopPropagation()">
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
-WhatsApp
-</a>
+<a class="btn" href="https://wa.me/5492926404627">Consultar</a>
+</div>
 </div>
 </section>
 
+<footer>
+<p>© 2026 Sarro Cero</p>
+</footer>
+
+<a class="float" href="https://wa.me/5492926404627">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+</a>
+
 <script>
+  let sliders = {};
 
-const buscador = document.getElementById("buscador");
-const sugerencias = document.getElementById("sugerencias");
+function move(id, dir){
+    const c = document.getElementById(id);
+    if(!c) return;
 
-buscador.addEventListener("input", function(){
+    const items = c.querySelectorAll("img, video");
+    const total = items.length;
 
-let texto = buscador.value.toLowerCase();
-let productos = document.querySelectorAll(".producto");
+    if(!sliders[id]) sliders[id] = 0;
 
-sugerencias.innerHTML = "";
+    // 🔥 actualizar índice correctamente
+    sliders[id] = sliders[id] + dir;
 
-if(texto.length === 0){
-sugerencias.style.display = "none";
-return;
+    // 🔥 limitar bien
+    if(sliders[id] < 0) sliders[id] = 0;
+    if(sliders[id] > total - 1) sliders[id] = total - 1;
+
+    const container = c.parentElement;
+    const width = container.offsetWidth;
+
+    c.style.transform = `translateX(-${sliders[id] * width}px)`;
 }
 
-productos.forEach(prod=>{
+window.addEventListener("resize", () => {
+    for (let id in sliders) {
+        move(id, 0);
+    }
+});
 
-let nombre = prod.dataset.nombre.toLowerCase();
+function buscar(){ let input=document.querySelector("input").value.toLowerCase(); let cards=document.querySelectorAll(".card"); cards.forEach(card=>{ card.style.display=card.innerText.toLowerCase().includes(input)?"block":"none"; }); };
 
-if(nombre.includes(texto)){
 
+const listaSugerencias = [
+{texto:"franquicias hogar", link:"#franquicia"},
+{texto:"franquicias comercio", link:"#franquicia"},
+{texto:"franquicias industria", link:"#franquicia"},
+{texto:"curso modulo 1", link:"#cursos"},
+{texto:"curso modulo 2", link:"#cursos"},
+{texto:"pastillas lavarropas", link:"#pastillas"},
+{texto:"detección de fugas", link:"#deteccion"},
+{texto:"quincho alquiler", link:"#alquiler"},
+{texto:"membresía", link:"#membresia"}
+];
+
+function sugerencias(){
+let input = document.getElementById("buscador").value.toLowerCase();
+let contenedor = document.getElementById("sugerencias");
+
+contenedor.innerHTML = "";
+
+if(input.length === 0) return;
+
+listaSugerencias.forEach(item => {
+if(item.texto.includes(input)){
 let div = document.createElement("div");
-div.textContent = nombre;
+div.innerText = item.texto;
 
-div.onclick = function(){
+div.onclick = () => {
+document.getElementById("buscador").value = item.texto;
+contenedor.innerHTML = "";
 
-buscador.value = nombre;
-sugerencias.style.display = "none";
-
-prod.scrollIntoView({
-behavior:"smooth",
-block:"center"
+// 🔥 SCROLL AUTOMÁTICO
+document.querySelector(item.link).scrollIntoView({
+behavior:"smooth"
 });
 
 };
 
-sugerencias.appendChild(div);
-
-}
-
-});
-
-if(sugerencias.innerHTML !== ""){
-sugerencias.style.display = "block";
-}else{
-sugerencias.style.display = "none";
-}
-
-});
-
-document.addEventListener("click", function(e){
-if(!document.querySelector(".search-box").contains(e.target)){
-sugerencias.style.display="none";
+contenedor.appendChild(div);
 }
 });
-
-
-const contactoMenu=document.getElementById("contactoMenu");
-
-function toggleContacto(e){
-e.stopPropagation();
-contactoMenu.classList.toggle("active");
 }
-
-document.addEventListener("click",function(e){
-if(!contactoMenu.contains(e.target)){
-contactoMenu.classList.remove("active");
-}
-});
-
-function buscarProducto(){
-
-let texto=document.getElementById("buscador").value.toLowerCase();
-
-let productos=document.querySelectorAll(".producto");
-
-let encontrado=false;
-
-productos.forEach(prod=>{
-
-let nombre=prod.dataset.nombre.toLowerCase();
-
-if(nombre.includes(texto)){
-
-prod.scrollIntoView({
-behavior:"smooth",
-block:"center"
-});
-
-prod.style.boxShadow="0 0 25px #3483fa";
-
-setTimeout(()=>{
-prod.style.boxShadow="";
-},2000);
-
-encontrado=true;
-
-}
-
-});
-
-if(!encontrado){
-alert("No se encontró el producto");
-}
-
-}
-
-let index1 = 0;
-let index2 = 0;
-function silenciarVideos(){
-
-const videos = document.querySelectorAll("video");
-
-videos.forEach(video=>{
-video.pause();
-video.currentTime = 0;
-video.muted = true;
-});
-
-}
-
-/* CARRUSEL 1 */
-function mover1(dir){
-
-silenciarVideos();
-
-const carousel = document.getElementById("carousel1");
-const slides = carousel.children.length;
-
-index1 += dir;
-
-if(index1 < 0) index1 = slides - 1;
-if(index1 >= slides) index1 = 0;
-
-carousel.style.transform = `translateX(-${index1 * 100}%)`;
-
-}
-
-/* CARRUSEL 2 */
-function mover2(dir){
-
-silenciarVideos();
-
-const carousel = document.getElementById("carousel2");
-const slides = carousel.children.length;
-
-index2 += dir;
-
-if(index2 < 0) index2 = slides - 1;
-if(index2 >= slides) index2 = 0;
-
-carousel.style.transform = `translateX(-${index2 * 100}%)`;
-
-}
-
-
 </script>
 
-
-<footer>
-
-<div class="footer-contenedor">
-
-<div class="formulario-box">
-<h3>Realizar una consulta</h3>
-
-<form action="https://formsubmit.co/TUEMAIL@gmail.com" method="POST">
-<input type="text" name="nombre" placeholder="Tu nombre" required>
-<input type="email" name="email" placeholder="Tu email" required>
-<textarea name="mensaje" placeholder="Escribí tu consulta aquí..." required></textarea>
-
-<input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_next" value="gracias.html">
-
-<button type="submit">Enviar Consulta</button>
-</form>
-</div>
-
-<div class="contactos-box">
-<h3>Contactos</h3>
-<p>📞 Tel: 2926 404627</p>
-<p>📧 Email: tuemail@gmail.com</p>
-<p>📍 Coronel Suárez, Buenos Aires</p>
-<p><a href="https://wa.me/5492926404627" target="_blank">WhatsApp</a></p>
-<p><a href="https://www.instagram.com/sauloarcucci/" target="_blank">Instagram</a></p>
-<p><a href="https://www.facebook.com/saul.arcucci" target="_blank">Facebook</a></p>
-</div>
-
-</div>
-
-<div class="footer-copy">
-© 2026 Arcucci Saul Pascual Ernesto - Plataforma Profesional
-</div>
-
-</footer>
 </body>
 </html>
